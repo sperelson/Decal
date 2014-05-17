@@ -1,7 +1,4 @@
-![Decal](https://raw.githubusercontent.com/sperelson/Decal/master/_media/decallogo.svg)
-
-Decal
-=====
+# ![Decal](https://raw.githubusercontent.com/sperelson/Decal/master/_media/decallogo.svg)
 
 Using Jekyll to generate a dynamic site is... well, dumb.
 
