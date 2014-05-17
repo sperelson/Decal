@@ -1,5 +1,5 @@
 <?php
 
-class Users {
+class Blog {
 	private $dbconn = null;
 }
