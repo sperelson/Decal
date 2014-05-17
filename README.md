@@ -1,3 +1,7 @@
+Current status: active development
+* 30 days before functional blog
+* Layout and template for the PHP side of things appears steady. But it is still early and may change
+
 # ![Decal](https://raw.githubusercontent.com/sperelson/Decal/master/_media/decallogo.svg)
 
 Using Jekyll to generate a dynamic site is... well, dumb.
