@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: blogview
 permalink: /root/blog/index.php
 ---
 

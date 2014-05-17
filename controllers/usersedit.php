@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: userspost
 permalink: /root/users/edit/index.php
 ---
 

@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: view
 permalink: /root/login/index.php
 ---
 

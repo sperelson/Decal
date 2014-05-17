@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: userspost
 permalink: /root/users/changepwd/index.php
 ---
 

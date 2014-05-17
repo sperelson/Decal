@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: blogpost
 permalink: /root/blog/unpublish/index.php
 ---
 
