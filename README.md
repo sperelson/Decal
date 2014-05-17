@@ -1,4 +1,4 @@
-![Decal](https://raw.githubusercontent.com/sperelson/Decal/master/_media/decallogo.svg =300)
+![Decal](https://raw.githubusercontent.com/sperelson/Decal/master/_media/decallogo.svg)
 
 Decal
 =====
