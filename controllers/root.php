@@ -1,6 +1,8 @@
 ---
 layout: blogview
+title: Home
 permalink: /root/index.php
+relurl: /
 ---
 
 $list = Blog::getlist(1, 20, 0);
