@@ -1,6 +1,6 @@
 <?php
 
-include "../config/db.config";
+require_once(__DIR__ . "/../config/db.config");
 
 class Blog {
 	private static $dbconn = null;
