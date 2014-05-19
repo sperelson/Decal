@@ -5,9 +5,6 @@ require_once(__DIR__ . "/../config/db.config");
 class Blog {
 	private static $dbconn = null;
 	
-	public function __construct() {
-	}
-
 	public static function getlist($page=1, $count=20, $published=1) {
 		$limit = $count;
 		$offset = (($page > 0 ? $page : 1) - 1) * $limit;
@@ -23,7 +20,7 @@ EOD;
 		$stmtblog->bind_param("iii", $published, $offset, $count);
 		$stmtblog->bind_result($id, $title, $created, $publishedflg);
 		$stmtblog->execute();
-		$posts[] = array();
+		$posts = array();
 
 		while ($stmtblog->fetch()) {
 			$posts[] = array($id, $title, $created, $publishedflg);
