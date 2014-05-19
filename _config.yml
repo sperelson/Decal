@@ -2,6 +2,8 @@
 name: Decal PoC Blog
 title: Decal PoC Blog
 email: stephen@hapnic.com
+github: 
+twitter: 
 description: "This is a proof of concept. It may also be a joke gone horribly wrong"
 baseurl: ""
 url: "http://decal.hapnic.com"
