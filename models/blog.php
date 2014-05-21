@@ -42,13 +42,17 @@ EOD;
 		$stmtblog->bind_param("i", $id);
 		$stmtblog->bind_result($id, $title, $created, $author, $publishedflg, $body);
 		$stmtblog->execute();
-		$post = array();
+		$result = $stmtblog->get_result();
 
-		while ($stmtblog->fetch()) {
-			$authortmp = $author == '' ? false : $author;
-			$bodyhtml = Markdown::defaultTransform($body);
-			$post = array('id' => $id, 'title' => $title, 'created' => $created, 'author' => $authortmp, 'published' => $publishedflg, 'body' => $bodyhtml);
-			break;
+		if ($result !== false) {
+			$rawpost = $result->fetch_row();
+			$post = array();
+
+			if (!is_null($rawpost)) {
+				$authortmp = $rawpost[3] == '' ? false : $rawpost[3];
+				$bodyhtml = Markdown::defaultTransform($rawpost[5]);
+				$post = array('id' => $rawpost[0], 'title' => $rawpost[1], 'created' => $rawpost[2], 'author' => $authortmp, 'published' => $rawpost[4], 'body' => $bodyhtml);
+			}
 		}
 		$stmtblog->close();
 
