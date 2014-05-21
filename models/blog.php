@@ -1,4 +1,5 @@
 <?php
+use \Michelf\Markdown;
 
 require_once(__DIR__ . "/../config/db.config");
 
@@ -28,6 +29,30 @@ EOD;
 		$stmtblog->close();
 
 		return $posts;
+	}
+
+	public static function getpost($id) {
+		$con = self::dbCon();
+		$sqlpost = <<<EOD
+select `id`, `title`, `created`, `author`, `published`, `body`
+from `posts`
+where `id` = ?
+EOD;
+		$stmtblog = $con->prepare($sqlpost);
+		$stmtblog->bind_param("i", $id);
+		$stmtblog->bind_result($id, $title, $created, $author, $publishedflg, $body);
+		$stmtblog->execute();
+		$post = array();
+
+		while ($stmtblog->fetch()) {
+			$authortmp = $author == '' ? false : $author;
+			$bodyhtml = Markdown::defaultTransform($body);
+			$post = array('id' => $id, 'title' => $title, 'created' => $created, 'author' => $authortmp, 'published' => $publishedflg, 'body' => $bodyhtml);
+			break;
+		}
+		$stmtblog->close();
+
+		return $post;
 	}
 
 	/**
