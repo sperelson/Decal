@@ -23,7 +23,7 @@ EOD;
 		$posts = array();
 
 		while ($stmtblog->fetch()) {
-			$posts[] = array($id, $title, $created, $publishedflg);
+			$posts[] = array('id' => $id, 'title' => $title, 'created' => $created, 'published' => $publishedflg);
 		}
 		$stmtblog->close();
 
