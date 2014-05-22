@@ -1,5 +1,4 @@
 <?php
-use \Michelf\Markdown;
 
 require_once(__DIR__ . "/../config/db.config");
 
@@ -50,7 +49,8 @@ EOD;
 
 			if (!is_null($rawpost)) {
 				$authortmp = $rawpost[3] == '' ? false : $rawpost[3];
-				$bodyhtml = Markdown::defaultTransform($rawpost[5]);
+				$parsedown = new ParsedownExtra();
+				$bodyhtml = $parsedown->text($rawpost[5]);
 				$post = array('id' => $rawpost[0], 'title' => $rawpost[1], 'created' => $rawpost[2], 'author' => $authortmp, 'published' => $rawpost[4], 'body' => $bodyhtml);
 			}
 		}
